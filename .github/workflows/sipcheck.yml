@@ -1,0 +1,11 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: [macOS-latest]
+    steps:
+    - uses: actions/checkout@v1
+    - name: See if we can touch a directory in /System
+      run: sudo touch /System/somefile
